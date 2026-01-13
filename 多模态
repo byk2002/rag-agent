@@ -412,7 +412,7 @@ class MultiDocumentKnowledgeBase:
         # 【修改点 2】必须先初始化 chunk_store，因为 _load_knowledge_base 会用到它
         self.chunk_store = ChunkStore(
             self.kb_path / "chunk_store",
-            use_pickle=True  # 使用 pickle 获得更好性能
+            use_pickle=False  # 使用 pickle 获得更好性能
         )
         # 【新增】 初始化高级 PDF 解析器
         self.pdf_parser = UnstructuredPDFParser(self.kb_path)
